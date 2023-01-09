@@ -5,8 +5,8 @@ from bs4 import BeautifulSoup
 
 #recipe_elements = results.find_all("div", class_="")
 
-def get_ingreds():
-  URL = "https://x12.org/codes/claim-status-category-codes"
+def get_codes():
+  URL = ""
   page = requests.get(URL)
   soup = BeautifulSoup(page.content, 'html.parser')
   job_elements = soup.find_all("div", class_="code_list__code-list-table")
@@ -16,4 +16,4 @@ def get_ingreds():
       code = code.string.strip()
       print(code)
 
-get_ingreds()
+get_codes()
